@@ -1,0 +1,39 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block title %} 
+My Blog 
+{% endblock %} 
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "blog/post.css" %}" />
+  <link rel="stylesheet" href="{% static "blog/index.css" %}" />
+{% endblock %}
+
+{% block content %}
+<section id="welcome">
+  <header>
+    <img src="{% static "blog/images/vaibhav.jpg" %}" alt="Max - The Author Of This Blog" />
+    <h2>VAIBHAV'S BLOG</h2>
+  </header>
+  <p>Hi, I am Vaibhav and I am learning Django</p>
+</section>
+
+<section id="latest-posts">
+  <h2>My Latest Thoughts</h2>
+
+  <ul>
+    {% include "blog/includes/post.html" %}
+  </ul>
+</section>
+
+<section id="about">
+  <h2>What I Do</h2>
+  <p>
+    I love programming, I support CHELSEA FC , I do CP and currently exploring various others fields of life
+  </p>
+  <p>
+    My goal is to become a good software Developer and work across multiple technologies.
+  </p>
+</section>
+{% endblock %}
